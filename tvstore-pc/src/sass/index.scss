@@ -1,0 +1,286 @@
+$win-title-bar-height: 40px;
+
+$btn-default-bg: #91d2ce;
+
+$left-bar-width: 100px;
+
+body {
+  font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', SimSun, 'Segoe UI', Tahoma, Helvetica, Sans-Serif;
+  font-size: 18px;
+  padding-top: $win-title-bar-height;
+  border: 3px solid #d7dbde;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.page {
+  overflow: auto;
+}
+
+a.btn {
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  color: #FFF;
+  background-color: $btn-default-bg;
+  padding: 5px 10px;
+}
+
+button.btn {
+  font-size: 14px;
+  background-color: $btn-default-bg;
+  border: 0;
+  color: #FFF;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  vertical-align: 0;
+}
+
+.win-title-bar {
+  position: fixed;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#404249), to(#2e3137));
+  width: 100%;
+  height: $win-title-bar-height;
+  line-height: $win-title-bar-height;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+
+  .win-title {
+    width: $left-bar-width;
+    text-align: center;
+    font-weight: 600;
+    background-color: #18191b;
+    color: #FFF;
+    float: left;
+  }
+
+  .function-bar {
+    margin-left: 10px;
+    float: left;
+    -webkit-app-region: no-drag;
+    font-size: 15px;
+
+    a {
+      padding: 0 10px;
+    }
+  }
+
+  .win-btn-bar {
+    float: right;
+    -webkit-app-region: no-drag;
+
+    a {
+      text-decoration: none;
+      color: #696968;
+      padding: 0 10px;
+
+      &:hover {
+        background: #18191b;
+        color: #FFF;
+      }
+    }
+  }
+}
+
+.nav-bar {
+  position: fixed;
+  top: $win-title-bar-height + 1px;
+  bottom: 0;
+  left: 0;
+  width: $left-bar-width;
+  background-color: #2e3137;
+  padding-top: 15px;
+  font-size: 16px;
+
+  .nav-item {
+
+    $bg: #18191b;
+
+    &:hover {
+      background-color: $bg;
+      border-left: 3px solid $bg;
+      font-size: 20px;
+      -webkit-transition: font-size .2s linear;
+    }
+
+    &.active {
+      background-color: #a00;
+    }
+
+    a {
+      display: block;
+      line-height: 40px;
+      height: 40px;
+      text-decoration: none;
+      color: #FFF;
+      text-align: center;
+
+    }
+
+    .split {
+      height: 1px;
+      background-color: #BBB;
+      margin: 10px 0;
+    }
+  }
+}
+
+.content {
+  margin-left: $left-bar-width;
+}
+
+.broswer {
+  border-top: 20px solid black;
+  width: 100%;
+  height: 50%;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.app-list {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(200, 200, 200, 0.4);
+
+  .app-item {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    width: 100px;
+    padding: 5px 5px;
+    text-align: center;
+
+    &:hover {
+      background-color: rgba(200, 200, 200, 0.7);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 80px;
+      padding: 10px;
+      display: block;
+    }
+
+    .name {
+      text-align: center;
+      overflow: hidden;
+      word-break: keep-all;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
+
+    .btn-install-app {
+      display: inline-block;
+      margin: 5px 0;
+      text-align: center;
+      color: #555;
+      font-size: 15px;
+      background-color: #91d2ce;
+      padding: 0 10px;
+      line-height: 24px;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #295c70;
+        color: #CCC;
+      }
+    }
+
+    .back {
+      position: absolute;
+      top:0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255,0.8);
+    }
+
+  }
+}
+
+.devicesDiv.page {
+  margin: 15px 20px;
+
+  .me {
+    font-size: 14px;
+
+    .clientName {
+      display: inline-block;
+      margin-right: 20px;
+      background-color: #e3e3e3;
+      padding: 5px 5px;
+
+      &:focus {
+        background-color: #ffff00;
+      }
+    }
+
+    .clientSerialNo {
+      display: inline-block;
+      background-color: #e3e3e3;
+      padding: 5px 5px;
+    }
+  }
+
+  .connect {
+    padding: 15px 0;
+    border-bottom: 2px solid #2b542c;
+
+    input {
+      width: 120px;
+      margin-right: 20px;
+    }
+  }
+
+  .device-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 15px 0;
+      border-bottom: 1px dashed #808080;
+
+      .status {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 13px;
+        vertical-align: middle;
+        color: #FFF;
+
+        &.connecting {
+          background-color: #28a4c9;
+        }
+        &.fail, &.rejcted {
+          background-color: red;
+        }
+        &.connected {
+          background-color: darkgreen;
+        }
+      }
+
+      .name {
+        display: inline-block;
+        font-size: 16px;
+        width: 100px;
+        font-weight: 700;
+        margin: 0 15px 0 0;
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      button {
+        float: right;
+      }
+    }
+  }
+}

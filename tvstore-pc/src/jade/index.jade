@@ -1,0 +1,88 @@
+doctype
+
+html(lang="zh-cn")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+        // 禁用响应式布局
+        // meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+
+        title TVSTORE-PC
+
+        // link(href="lib/bootstrap3/css/bootstrap.css", media="all", rel="stylesheet")
+        // link(href="lib/bootstrap3/css/bootstrap-theme.css", media="all", rel="stylesheet")
+        link(href="lib/normalize.css", media="all", rel="stylesheet")
+        link(href="lib/jquery-ui/css/pepper-grinder/jquery-ui-1.10.4.custom.css", media="all", rel="stylesheet")
+        link(href="css/index.css", media="all", rel="stylesheet")
+
+    body
+        div.win-title-bar(style="-webkit-app-region: drag")
+            div.win-title 葱盒
+            div.function-bar
+            div.win-btn-bar
+                a.btn-debug-tool(href="javascript:void(0);") D
+                a.btn-refresh-win(href="javascript:void(0);") R
+                a.btn-min-win(href="javascript:void(0);") -
+                a.btn-max-win(href="javascript:void(0);") +
+                a.btn-close-win(href="javascript:void(0);") X
+
+        div.nav-bar
+            div.nav-item.active
+                a(href="javascript:void(0)", data-target=".appDiv") 应用市场
+            div.nav-item
+                a(href="javascript:void(0)") 我的应用
+            div.nav-item
+                a(href="javascript:void(0)") 视频
+            div.nav-item
+                div.split
+            div.nav-item
+                a.btn-devices(href="javascript:void(0);", data-target=".devicesDiv") 设备
+            div.nav-item
+                a(href="javascript:void(0)") 任务历史
+        div.content
+            div.page.appDiv
+                ul.app-list
+
+            div.page.devicesDiv(style="display:none;")
+                div.me
+                    | 客户端名称：
+                    span.clientName(contenteditable="true")
+                    | 客户端序号：
+                    span.clientSerialNo
+                div.connect
+                    input.serialNo(type="text", placeholder="设备序号")
+                    input.connectKey(type="text", placeholder="密码")
+                    input.name(type="text", placeholder="备注名")
+                    button.btn-add-device(type="button") 连接新设备
+                ul.device-list
+
+
+        div.tmpl(style="display:none")
+            li.app-item
+                div.front
+                    img.icon
+                    div.name
+                div.back(style="display:none;")
+                    div.size
+                    a.btn-install-app 安装到电视
+            li.device-li
+                div
+                    span.name
+                    span.status
+                    button.btn-connect-device(type="button") 重连
+                    button.btn-disconnect-device(type="button") 断开
+                    button.btn-edit-device(type="button") 编辑
+                    button.btn-remove-device(type="button") 移除
+
+        div.device-chooser(title="请选择设备")
+
+
+        // div.broswer
+            h1 浏览器
+            iframe(src="http://www.baidu.com", nwdisable, nwfaketop)
+        script(src="lib/jquery-1.10.2.js")
+        script(src="lib/underscore.js")
+        // script(src="lib/bootstrap3/js/bootstrap.js")
+        script(src="lib/jquery-ui/js/jquery-ui-1.10.4.custom.js")
+        script(src="js/common.js")
+        script(src="js/index.js")
+        script(src="js/device.js")
